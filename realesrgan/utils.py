@@ -65,9 +65,13 @@ class RealESRGANer():
         # prefer to use params_ema
         if 'params_ema' in loadnet:
             keyname = 'params_ema'
-        else:
+            model.load_state_dict(loadnet[keyname], strict=True)
+        elif 'params' in loadnet:
             keyname = 'params'
-        model.load_state_dict(loadnet[keyname], strict=True)
+            model.load_state_dict(loadnet[keyname], strict=True)
+        else:
+            model.load_state_dict(loadnet, strict=False, weights_only=True)
+            
 
         model.eval()
         self.model = model.to(self.device)
