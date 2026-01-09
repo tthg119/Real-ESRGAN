@@ -70,7 +70,7 @@ class RealESRGANer():
             keyname = 'params'
             model.load_state_dict(loadnet[keyname], strict=True)
         else:
-            model.load_state_dict(loadnet, strict=False, weights_only=True)
+            model.load_state_dict(loadnet, strict=False)
             
 
         model.eval()
