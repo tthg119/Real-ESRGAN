@@ -6,8 +6,8 @@ gfpgan>=1.3.5
 numpy
 opencv-python
 Pillow
-torch==2.5.0+cu124
-torchaudio==2.5.0+cu124
-torchvision==0.20.0+cu124
+# torch==2.5.0+cu124
+# torchaudio==2.5.0+cu124
+# torchvision==0.20.0+cu124
 tqdm
 ffmpeg-python
